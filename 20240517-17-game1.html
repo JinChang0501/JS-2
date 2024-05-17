@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .rect {
+      position: relative;
+      width: 800px;
+      height: 600px;
+      background-color: aqua;
+      border: 1px solid black;
+    }
+
+    .ball {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: rgb(245, 238, 58);
+      border: 1px solid black;
+      border-radius: 50%;
+      line-height: 50px;
+      text-align: center;
+    }
+
+    .removable {
+      background-color: #708bec;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="rect">
+    <div class="ball" style="left: 0; top: 0;"></div>
+  </div>
+  <script>
+    const rect = document.querySelector(".rect");
+    const ball = document.querySelector(".ball");
+
+
+    const handler = e => {
+      e.preventDefault();
+      const x = parseInt(ball.style.left);
+      const y = parseInt(ball.style.top);
+
+
+      switch (e.code) {
+        case "ArrowRight":
+          ball.style.left = x + 10 + 'px';
+          break;
+        case "ArrowLeft":
+          ball.style.left = x - 10 + 'px';
+          break;
+        case "ArrowUp":
+          ball.style.top = y - 10 + 'px';
+          break;
+        case "ArrowDown":
+          ball.style.top = y + 10 + 'px';
+
+      }
+
+    };
+
+    window.addEventListener("keydown", handler);
+
+
+
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const a = 3, b = 4;
+    const ob1 = { a, b };
+    const ar = [2, 3, 4, 5, 6];
+    const ob2 = {
+      name: "Bill", age: 5, gender: "Male"
+    };
+
+
+
+    const { name, age } = ob2;
+    const { name: myName, age: myAge } = ob2;
+
+
+    const [c, d] = [8, 7, 6, 5, 4, 3];
+    const [e, f, ...g] = [8, 7, 6, 5, 4, 3];
+
+    console.log({ name, age, c, d, myName, myAge });
+    console.log({ g });
+
+
+
+
+
+  </script>
+</body>
+
+</html>

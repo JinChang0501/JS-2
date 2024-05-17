@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+
+  <script>
+    const divs = document.querySelectorAll("div");
+    const obj1 = {};
+    const obj2 = { name: 'John' };
+    const obj3 = { name: 'David' };
+
+    const ar1 = [1, 2, 3];
+    const str1 = "bbbcc";
+
+    obj1[obj2] = 'hello~';
+    obj1[obj3] = 'hi~';
+    console.log(obj1[obj2]);
+    console.log(obj1['[object Object]']);
+    // Object 類型, key 主要是字串
+
+    console.log(obj1[Symbol.iterator]);
+    console.log(ar1[Symbol.iterator]); // 陣列是可迭代的類型
+    console.log(str1[Symbol.iterator]); // 字串是可迭代的類型
+    console.log(divs[Symbol.iterator]); // NodeList是可迭代的類型
+
+    const [div1, div2] = divs; // destruct
+
+  </script>
+</body>
+
+</html>
