@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capturing</title>
+  <style>
+    .rect {
+      position: relative;
+      width: 800px;
+      height: 600px;
+      background-color: aqua;
+      border: 1px solid black;
+    }
+
+    .ball {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: rgb(255, 0, 0);
+      /* border: 1px solid black; */
+      border-radius: 50%;
+      /* line-height: 300px; */
+      /* text-align: center; */
+      left: 100px;
+      top: 100px;
+      pointer-events: none;
+    }
+
+    /* .rect2 {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: rgb(157, 247, 115);
+      border: 1px solid black;
+      left: 100px;
+      top: 100px;
+    } */
+  </style>
+</head>
+
+<body>
+  <div class="rect">
+    <!-- <div class="ball"> -->
+    <!-- <div class="rect2"></div> -->
+    <!-- </div> -->
+  </div>
+  <div id="info"></div>
+  <script>
+    const rect = document.querySelector(".rect");
+    const info = document.querySelector("#info");
+
+
+    const mUp = (e) => {
+      rect.removeEventListener("mousemove", mMove)
+    }
+
+    const mDown = (e) => {
+      rect.addEventListener("mousemove", mMove)
+    }
+
+    const mMove = (e) => {
+      const b = document.createElement("div");
+      b.className = "ball";
+      b.style.left = `${e.offsetX - 10}px`
+      b.style.top = `${e.offsetY - 10}px`
+      rect.append(b);
+    };
+
+    rect.addEventListener("mousedown", mDown);
+    window.addEventListener("mouseup", mUp);
+
+
+
+  </script>
+</body>
+
+</html>

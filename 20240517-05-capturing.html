@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Capturing</title>
   <style>
     .rect {
       position: relative;
@@ -36,26 +36,46 @@
     const ball = document.querySelector(".ball");
 
 
-
-    window.addEventListener("click", (e) => {
-      console.log("window-------------", e.eventPhase);
-    });
-
+    //bubbling
     rect.addEventListener('click', (e) => {
-      console.log("rect-------------", e.eventPhase);
-
+      console.log("rect---bubbling----------", e.eventPhase);
 
     });
 
     ball.addEventListener('click', (e) => {
-      console.log("ball-------------", e.eventPhase);
+      console.log("ball---bubbling----------", e.eventPhase);
 
     });
 
     document.addEventListener('click', (e) => {
-      console.log("document-------------", e.eventPhase);
+      console.log("document---bubbling----------", e.eventPhase);
 
     });
+    window.addEventListener("click", (e) => {
+      console.log("window---bubbling----------", e.eventPhase);
+    });
+    //capturing
+    window.addEventListener("click", (e) => {
+      console.log("window---capturing----------", e.eventPhase);
+    }
+      , true);
+
+    rect.addEventListener('click', (e) => {
+      e.stopPropagation();
+      console.log("rect---capturing----------", e.eventPhase);
+    }
+      , true);
+
+
+    ball.addEventListener('click', (e) => {
+      console.log("ball---capturing----------", e.eventPhase);
+    }
+      , true);
+
+    document.addEventListener('click', (e) => {
+      console.log("document---capturing----------", e.eventPhase);
+    }
+      , true);
 
 
 

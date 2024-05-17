@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Capturing</title>
   <style>
     .rect {
       position: relative;
@@ -23,28 +23,44 @@
       border-radius: 50%;
       line-height: 300px;
       text-align: center;
+      left: 100px;
+      top: 100px;
+    }
+
+    .rect2 {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: rgb(157, 247, 115);
+      border: 1px solid black;
+      left: 100px;
+      top: 100px;
     }
   </style>
 </head>
 
 <body>
   <div class="rect">
-    <div class="ball">Test</div>
+    <div class="ball">
+      <div class="rect2"></div>
+    </div>
   </div>
+  <div id="info"></div>
   <script>
     const rect = document.querySelector(".rect");
-    const ball = document.querySelector(".ball");
+    const info = document.querySelector("#info");
 
-    const listener = (e) => {
-      // target 事件發生的最底層的元素
-      console.log(e.target);
-      // currentTarget 事件處理器的註冊對象
-      console.log(e.currentTarget);
 
-      console.log(e);
-    };
+    //bubbling
+    rect.addEventListener('mousemove', (e) => {
+      info.innerHTML = `
+     client = ${e.clientX},${e.clientY}<br>
+     page = ${e.pageX},${e.pageY}<br>
+     offset = ${e.offsetX},${e.offsetY}<br>
+     `;
 
-    rect.addEventListener('click', listener);
+    });
+
 
   </script>
 </body>
