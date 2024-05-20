@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <pre id="info"></pre>
+  <script>
+    const info = document.querySelector("#info");
+
+    const months = ['March', 'Jan', 'Feb', 'Dec'];
+
+
+    months.sort((a, b) => {
+      return a < b ? 1 : -1;
+      // if (a < b) {
+      //   return -1;
+      // }
+      // if (a > b) {
+      //   return 1;
+      // }
+
+    });
+
+    info.innerText += "\n" + JSON.stringify(months) + "\n\n";
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <pre id="info"></pre>
+  <script>
+    const info = document.querySelector("#info");
+
+    const ar2 = [12, 3, 67, 23, 9, 35];
+    const ar3 = [12, 3, 67, 23, 9, 35];
+
+    ar2.sort((a, b) => {
+      info.innerText += JSON.stringify({ a, b }) + "\n";
+      return a - b; // 負值對調, 數值由小到大
+    });
+
+
+    ar3.sort((a, b) => {
+      info.innerText += JSON.stringify({ a, b }) + "\n";
+      return -a + b; // 數值由大到小
+    });
+
+    info.innerText += "\n" + JSON.stringify(ar2) + "\n\n";
+    info.innerText += "\n" + JSON.stringify(ar3) + "\n\n";
+  </script>
+</body>
+
+</html>

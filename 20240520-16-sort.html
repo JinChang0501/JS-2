@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="info"></div>
+
+  <script>
+    const info = document.querySelector("#info");
+
+
+    const ar1 = [..."賴總統就職演說拋兩岸對話 重啟對等觀光旅遊、學位生來台就學"];
+    const ar2 = [12, 3, 67, 23, 9, 35];
+
+
+    info.innerText = JSON.stringify(ar1) + "\n\n"
+    info.innerText += JSON.stringify(ar2) + "\n\n"
+
+
+
+    ar1.sort();// 使用預設的方式排序 
+    ar2.sort(); // 以字串的方式排序
+
+    info.innerText += JSON.stringify(ar1) + "\n\n"
+    info.innerText += JSON.stringify(ar2) + "\n\n"
+
+
+
+  </script>
+</body>
+
+</html>
