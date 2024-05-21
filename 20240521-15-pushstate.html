@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button onclick="pushState()">pushState</button>
+
+  <script>
+    const pushState = () => {
+      history.pushState({ a: 100 }), '', `/my_Path?a=1`
+    };
+
+    window.addEventListener('popstate', (e) => {
+      console.log(history.state);
+      console.log(location.href);
+
+    })
+
+  </script>
+</body>
+
+</html>
